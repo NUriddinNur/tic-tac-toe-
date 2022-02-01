@@ -41,12 +41,12 @@ section {
 
 .endgame {
     display: none;
-    width: 320;
-    height: 240;
+    width: 350;
+    height: 250;
     top: 120px;
     background-color: rgb(221, 187, 146);
     position: absolute;
-    left: 43%;
+    left: 45%;
     margin-left: -100px;
     padding-top: 50px;
     padding-bottom: 50px;
