@@ -3,19 +3,16 @@ const restart = document.querySelector('.game--restart')
 
 let hPlayer = 'X'
 let aiPlayer = 'O' 
-
-
 let game = []
+
 gamelength = 9
 game.fill(undefined)
 
-
 startGame(cell)
-
 restart.addEventListener('click', restartG)
 
 function restartG() {
-    gamelength = 9
+    game.length = 9
     game.fill(undefined)
     for (let i = 0; i < cell.length; i++) {
         cell[i].textContent = ""
@@ -51,11 +48,24 @@ function aiWalk(n = random()) {
         round = 1
         cell[n].textContent = aiPlayer
         return
+    }else if (drow()) {
+        declarereWinner("Durang")
+        return
     }
     else {
         aiWalk()
     }
     
+}
+
+function drow() {
+    let count = 0;
+    for (let i = 0; i < game.length; i++) {
+        if(game[i] === "X" || game[i] === "O") {
+            count++
+        }
+    }
+    return count === game.length
 }
 
 function checkWin(player) {
